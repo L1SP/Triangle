@@ -73,11 +73,11 @@ std::string Triangle::getTriangleType() {
 	double c = p1.distanceTo(p2);
 	double eps = 0.00001;
 	if (abs(a * a + b * b - c * c) < eps || abs(a * a + c * c - b * b) < eps || abs(b * b + c * c - a * a) < eps)
-		return "Треугольник прямоугольный.";
+		return "РўСЂРµСѓРіРѕР»СЊРЅРёРє РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№.";
 	else if (a * a + b * b > c * c || a * a + c * c > b * b || b * b + c * c > a * a)
-		return "Треугольник остроугольный.";
+		return "РўСЂРµСѓРіРѕР»СЊРЅРёРє РѕСЃС‚СЂРѕСѓРіРѕР»СЊРЅС‹Р№.";
 	else
-		return "Треугольник тупоугольный";
+		return "РўСЂРµСѓРіРѕР»СЊРЅРёРє С‚СѓРїРѕСѓРіРѕР»СЊРЅС‹Р№";
 }
 bool Triangle::operator==(const Triangle& ct) {
 	return p1 == ct.p1 && p2 == ct.p2 && p3 == ct.p3;
@@ -86,8 +86,8 @@ bool Triangle::operator!=(const Triangle& ct) {
 	return !(*this==ct);
 }
 std::ostream& operator<<(std::ostream& os, const Triangle& ct) {
-	os << "1 точка: " << ct.p1 << '\n';
-	os << "2 точка: " << ct.p2 << '\n';
-	os << "3 точка: " << ct.p3 << '\n';
+	os << "1 С‚РѕС‡РєР°: " << ct.p1 << '\n';
+	os << "2 С‚РѕС‡РєР°: " << ct.p2 << '\n';
+	os << "3 С‚РѕС‡РєР°: " << ct.p3 << '\n';
 	return os;
 }
